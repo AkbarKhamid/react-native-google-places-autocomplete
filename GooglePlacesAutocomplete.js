@@ -3,12 +3,9 @@ import debounce from 'lodash.debounce';
 import PropTypes from 'prop-types';
 import Qs from 'qs';
 import React, {
-  forwardRef,
-  useMemo,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
+  forwardRef, useEffect,
+  useImperativeHandle, useMemo, useRef,
+  useState
 } from 'react';
 import {
   ActivityIndicator,
@@ -20,7 +17,7 @@ import {
   Text,
   TextInput,
   TouchableHighlight,
-  View,
+  View
 } from 'react-native';
 
 const defaultStyles = {
@@ -158,7 +155,7 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     setAddressText: (address) => {
-      setStateText(address);
+      _handleChangeText(address);
     },
     getAddressText: () => stateText,
     blur: () => inputRef.current.blur(),
