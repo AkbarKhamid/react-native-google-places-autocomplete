@@ -5,7 +5,7 @@ import {
   TextInput,
   TextInputProps,
   TextStyle,
-  ViewStyle,
+  ViewStyle
 } from 'react-native';
 
 /** @see https://developers.google.com/maps/faq#languagesupport */
@@ -409,6 +409,7 @@ interface GooglePlacesAutocompleteProps {
   placeholder: string;
   predefinedPlaces?: Place[];
   predefinedPlacesAlwaysVisible?: boolean;
+  listViewAlwaysVisible?: boolean;
   preProcess?: (text: string) => string;
   query: Query | Object;
   renderDescription?: (description: DescriptionRow) => string;

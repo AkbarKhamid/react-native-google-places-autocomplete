@@ -750,7 +750,7 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
       (stateText !== '' ||
         props.predefinedPlaces.length > 0 ||
         props.currentLocation === true) &&
-      listViewDisplayed === true
+      listViewDisplayed === true || props.listViewAlwaysVisible
     ) {
       return (
         <FlatList
@@ -865,6 +865,7 @@ GooglePlacesAutocomplete.propTypes = {
     PropTypes.bool,
     PropTypes.oneOf(['auto']),
   ]),
+  listViewAlwaysVisible: PropTypes.bool,
   keepResultsAfterBlur: PropTypes.bool,
   minLength: PropTypes.number,
   nearbyPlacesAPI: PropTypes.string,
